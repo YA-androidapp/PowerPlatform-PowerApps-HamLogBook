@@ -8,6 +8,9 @@ Power Apps で実装したアマチュア無線業務日誌
 
 ## データソース
 
+- [JARL](https://www.jarl.org/)
+  - [JCC・JCG](https://www.jarl.org/Japanese/A_Shiryo/A-2_jcc-jcg/jcc.htm)
+
 - [住所.jp](http://jusyo.jp/)
   - [csv_zenkoku.zip](http://jusyo.jp/downloads/new/csv/csv_zenkoku.zip)
 
