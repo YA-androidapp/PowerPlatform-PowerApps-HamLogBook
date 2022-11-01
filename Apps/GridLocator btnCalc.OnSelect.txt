@@ -1,0 +1,35 @@
+If(
+    And(
+        Value(txtLat.Text) >= -90,
+        Value(txtLat.Text) <= 90,
+        Value(txtLon.Text) >= -180,
+        Value(txtLon.Text) <= 180
+    ),
+    UpdateContext({
+        lat: Value(txtLat.Text),
+        lon: Value(txtLon.Text)
+    });
+    UpdateContext({
+        val1: (lon + 180) / 20,
+        val2: (lat + 90) / 10
+    });
+    UpdateContext({
+        num1: RoundDown(val1, 0),
+        num2: RoundDown(val2, 0),
+        num3: RoundDown(10 * (val1 - RoundDown(val1, 0)), 0),
+        num4: RoundDown(10 * (val2 - RoundDown(val2, 0)), 0),
+        num5: RoundDown(240 * (val1 - num1 - (0.1 * num3)), 0),
+        num6: RoundDown(240 * (val2 - num2 - (0.1 * num4)), 0)
+    });
+    UpdateContext({
+        char1: Char(65 + num1),
+        char2: Char(65 + num2),
+        char3: Text(num3),
+        char4: Text(num4),
+        char5: Char(65 + num5),
+        char6: Char(65 + num6)
+    });
+    UpdateContext({
+        GridLocator: char1 & char2 & char3 & char4 & char5 & char6
+    })
+)
